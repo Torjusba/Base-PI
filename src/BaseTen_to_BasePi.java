@@ -6,7 +6,7 @@ public class BaseTen_to_BasePi {
 		while (true) {
 			// Initialize variables
 			double num = 0;
-			System.out.println("Number to convert to base Ten: ");
+			System.out.println("Number to convert to base Pi: ");
 			Scanner in = new Scanner(System.in);
 			try {
 				num = in.nextDouble();
