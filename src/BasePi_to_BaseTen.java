@@ -1,25 +1,23 @@
-import java.math.*;
 import java.util.Scanner;
 
-public class ToPiTallConverter {
+public class BasePi_to_BaseTen {
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+		
 		
 		while (true)
 		{
+//Initialize variables 
 		double num = 0;
 		System.out.println("Number: ");
+		Scanner in = new Scanner(System.in);
 		try {
 			num = in.nextDouble();
-		} finally {
-			in.close();
-		}
+		} finally {}
 		int a = 0;
 		int x;
-		double y;
 		double ans = 0;
 		
-		//Find amount of digits
+//Find amount of digits
 		while (true) { 
 			if ((num / Math.pow(Math.PI, a+1)) >= 1) {
 				a++;
@@ -27,15 +25,13 @@ public class ToPiTallConverter {
 				break;
 			}
 		}
-		System.out.println(a);
-		//Calculate digits
-		for(int i = a; i >=0; i--) {
+
+//Calculate digits
+		for(int i = a; i >=-10; i--) {
 			x = (int)(num/Math.pow(Math.PI, i));
-			y = (double)x;
 			num -= x * Math.pow(Math.PI, i);
-			ans += (y*Math.pow(10, i));
+			ans += ((double)x*Math.pow(10, i));
 		}
-		ans += num;
 		System.out.println(ans);
 	}
 	}

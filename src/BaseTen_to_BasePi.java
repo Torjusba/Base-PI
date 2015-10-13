@@ -1,24 +1,24 @@
-import java.math.*;
 import java.util.Scanner;
 
-public class Converter {
+public class BaseTen_to_BasePi {
 	public static void main(String[] args) {
 		while (true) {
-		int num = 0;
+//Initialize variables
+			int num = 0;
 		Scanner in = new Scanner(System.in);
 		System.out.println("Number to convert: ");
 		num = in.nextInt();
-		
-		double rest = 0;
+		double result = 0;
 		int pow = 0;
 		int digit = 0;
-		
+
+//Convert to Base Pi
 		while (num > 0) {
 			digit = num % 10;
-			rest += (digit * Math.pow(Math.PI, pow++));
+			result += (digit * Math.pow(Math.PI, pow++));
 			num = num/10;
 		}
-		System.out.println(rest);
+		System.out.println(result);
 		}
 	}
 	
