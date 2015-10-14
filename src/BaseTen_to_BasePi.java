@@ -1,16 +1,19 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class BaseTen_to_BasePi {
-	public static void main(String[] args) {
+	public String toPi(String number) {
 
 		while (true) {
 			// Initialize variables
-			double num = 0;
-			System.out.println("Number to convert to base Pi: ");
-			Scanner in = new Scanner(System.in);
+			double num;
 			try {
-				num = in.nextDouble();
+				num = Double.parseDouble(number);
 			} finally {}
+//			System.out.println("Number to convert to base Pi: ");
+//			Scanner in = new Scanner(System.in);
+//			try {
+//				num = in.nextDouble();
+//			} finally {}
 			int a = 0;
 			int x;
 			double answer = 0;
@@ -30,7 +33,8 @@ public class BaseTen_to_BasePi {
 				num -= x * Math.pow(Math.PI, i);
 				answer += ((double) x * Math.pow(10, i));
 			}
-			System.out.println(answer);
+//			System.out.println(answer);
+			return(Double.toString(answer));
 		}
 	}
 }
