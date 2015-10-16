@@ -2,27 +2,28 @@
 
 public class BasePi_to_BaseTen {
 	public String toTen(String number) {
-//		while (true) {
-//Initialize variables
-		double num;
-		try {num = Double.parseDouble(number);} finally {};
-//		Scanner in = new Scanner(System.in);
-//		System.out.println("Number to convert to base Ten: ");
-//		num = in.nextDouble();
-		double result = 0;
-		int pow = 0;
-		int digit = 0;
-
-//Convert to Base Pi
-		while (num > 0) {
-			digit = (int)num % 10;
-			result += (digit * Math.pow(Math.PI, pow++));
-			num = num/10;
+		
+		String digits = "0123";
+		Double result = 0.0;
+		
+		int pow = number.indexOf('.');
+		if (pow == -1)
+			pow = number.length() - 1;
+		else
+			pow--;
+			
+		for (int i = 0; i < number.length(); i++) {
+			char c = number.charAt(i)
+			if (c == '.')
+				continue; 
+				
+			int digit = digits.indexOf(c);
+			if (digit == -1)
+				return "Invalid digit";
+				
+			result += digit * Math.pow(Math.PI, pow--);
 		}
-//		System.out.println(result);
+		
 		return Double.toString(result);
-		}
-//	}
-	
-	
+	}	
 }
